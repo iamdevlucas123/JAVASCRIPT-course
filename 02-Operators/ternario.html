@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let idade = 20;
+
+        // Operador ternário simples
+        let resultado = idade >= 18 ? "Maior de idade" : "Menor de idade";
+        console.log("Idade:", idade, "->", resultado);
+
+        // Outro exemplo
+        let nota = 7;
+        resultado = nota >= 6 ? "Aprovado" : "Reprovado";
+        console.log("Nota:", nota, "->", resultado);
+
+        // Com booleano
+        let temCNH = true;
+        resultado = temCNH ? "Pode dirigir" : "Não pode dirigir";
+        console.log("Tem CNH?", temCNH, "->", resultado);
+
+        // Com combinação de ternários
+        let saldo = 0;
+        resultado = saldo > 0 ? "Saldo positivo" : saldo === 0 ? "Saldo neutro" : "Saldo negativo";
+        console.log("Saldo:", saldo, "->", resultado);
+
+        /*
+        Idade: 20 -> Maior de idade
+        Nota: 7 -> Aprovado
+        Tem CNH? true -> Pode dirigir
+        Saldo: 0 -> Saldo neutro
+        */
+
+    </script>
+</body>
+</html>

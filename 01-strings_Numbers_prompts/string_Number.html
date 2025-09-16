@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variaveis e data types</title>
+</head>
+<body>
+    <h1>Variaveis e os tipos primitivos Number e String</h1>
+
+    <script>
+        // concatenação com string:
+
+        var nome = window.prompt("Digite seu nome: ")
+        window.alert("Bem vindo " + nome) // + concatenação
+
+        //concatenação de numbers 
+        // o window.prompt considera tudo como se fosse string
+        //Conversão de string para number:
+        // Number.parseint() para numeros inteiros
+        // Number.parsefloat() para numeros com virgula
+
+        var n1 = Number.parseInt(window.prompt("Digite um numero: "))
+        var n2 = Number.parseInt(window.prompt("Digite outro numero: "))
+
+        var soma = n1 + n2
+
+        window.alert("A soma dos dois numeros é: " + soma)
+
+        // Podemos usar somente Number também
+        // Caso não tenha preferencia
+
+        var n3 = Number(window.prompt("Digite um numero: "))
+        var n4 = Number(window.prompt("Digite outro numero: "))
+
+        var soma1 = n3 + n4
+
+        window.alert("A soma dos dois numeros é: " + soma1)
+
+        // number -> string
+
+        var n5 = String(3)
+        var n6 = String(7)
+
+        var soma2 = n5 + n6
+
+        window.alert("A soma dos numeros 3+7 = "+ soma2)
+
+        // Posso mudar com o n.Number e Number(n)  ou  n.String e String(n)
+
+        window.alert("Porem quando defino que a soma é uma string fica: " + String(soma2))
+        
+    </script>
+</body>
+</html>

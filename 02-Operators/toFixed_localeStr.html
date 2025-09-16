@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toFixed e moedas</title>
+</head>
+<body>
+    <h1>Aprendendo a converter Numbers</h1>
+
+    <script>
+        var salary = parseFloat(window.prompt("Indique seu salário com virgula: "))
+
+        document.write(`Este é o seu salário com a pontuação exata ${salary.toFixed(2).replace(',' , '.')} <br/>`)
+        document.write(`A moeda local é: ${salary.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})}`)
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Template Strings and Atributos de strings</h1>
+
+    <script>
+        //PLACEHOLDER TEMPLATE STRING - Uma forma mais simples de usar variaveis ${var}
+
+        var nota1 = Number(window.prompt("Qual foi a primeira nota?: "))
+        var nota2 = Number(window.prompt("Qual foi a segunda nota?: "))
+
+        var media = (nota1 + nota2) / 2
+
+        //Lembrar que quando for usar o placeholder é preciso usar crase (``)
+        //Também podemos usar o document.write que escreve algo na pagina
+
+        document.write(`A primeira nota da prova foi ${nota1}, sendo a segunda ${nota2}. Resutando na média ${media} <br/>`)
+
+        // ALGUNS ATRIBUTOS
+
+        var name = String(window.prompt("Digite seu nome: "))
+
+        document.write(`Seu nome é ${name} e tem ${name.length} letras <br/>`)
+        document.write(`Seu nome em letrar maiúsculas é: ${name.toUpperCase()} <br/>`)
+        document.write(`Seu nome em letras minúsculas é: ${name.toLowerCase()}`)
+    </script>
+</body>
+</html>
