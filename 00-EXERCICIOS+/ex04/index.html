@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contador</title>
+    <style>
+        body {
+            background-image: linear-gradient(to bottom, rgb(40, 40, 72),  rgba(0, 0, 255, 0.444));
+            background-repeat: no-repeat;
+            text-align: center;
+            height: 100vh;
+            color: white;
+
+        }
+        .container {
+            display: flex;
+            flex-flow: column nowrap;
+            background-color: rgb(40, 40, 72);
+            height: 400px;
+            width: 500px;
+            margin: auto;
+            border-radius: 20px;
+            color: white;
+            align-items:center;            
+            justify-content: center;
+        }
+
+        .formulario {
+            display: flex;
+            align-items: flex-start;
+            flex-flow: column nowrap;
+            width: 300px;
+            height: 150px;
+    
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>CONTADOR</h1>
+    <section class="container">
+        <div class="formulario">
+            <label for="start">Start with: </label>
+            <input type="number" name="start" id="start">
+            <label for="end">End with: </label>
+            <input type="number" name="end" id="end">
+            <label for="step">Step: </label>
+            <input type="number" name="step" id="step">
+        </div>
+
+        <input type="submit" value="CONTAR" onclick="contar()">
+        <p id="resultado">CONTANDO: </p>
+
+        <script>
+            
+            function contar() {
+                var start = Number(document.getElementById('start').value)
+                var end = Number(document.getElementById('end').value)
+                var step = Number(document.getElementById('step').value)
+
+                if (step <= 0 || step == '') {
+                    alert('Please, type a positive number.')
+                    return
+                }
+
+                var res = document.getElementById('resultado')
+
+
+                if (start < end) {
+                    for (var c = start; c <= end; c += step) {
+                        resultado.innerHTML += ` ${c} \u{1F449}`;
+                    }
+                } else {
+                    for (var c = start; c >= end; c -= step) {
+                        resultado.innerHTML += ` ${c} \u{1F449}`;
+                    }
+                }
+            }
+        </script>
+    </section>
+</body>
+</html>

@@ -4,12 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM</title>
+    <style>
+        body {
+            background-color: rgba(56, 56, 222, 0.422);
+            color: white;
+            font: normal 18px Arial;
+        }
+
+        strong {
+            color: red;
+        }
+    </style>
 </head>
 <body>
-    <h1>Iciando estudos de DOM</h1>
+    <h1>Inciando estudos de DOM</h1>
     <p>primeiro paragrafo</p>
-    <p>segundo paragrafo</p>
-    <div>Está é uma DIV</div>
+    <p>segundo paragrafo com o <strong>DOM</strong> <br></p>
+    <div id="msg">Está é uma DIV</div>
+    <div name="msg">Está é uma DIV</div>
+    <div class="msg">Está é uma DIV</div>
 
     <script>
         // Seletores por marca/tags getElementsByTagName()
@@ -17,7 +30,34 @@
         var p1 = document.getElementsByTagName('p') [0]
         document.write(p1.innerText)
 
-        //Posso selecionar as tags
+        //Posso selecionar qualque caminho já colocado no HTML e no CSS, por exemplo:
+
+        var corpo = document.body
+        corpo.style.background = "black" //Eu consegui alterar o background para preto
+
+        //Diferença entre innerText e innerHTML:
+
+        var p2 = document.getElementsByTagName('p') [1]
+        document.write(p2.innerText) //Pega somente o conteudo
+        document.write(p2.innerHTML) //Pega os estilos/tags
+
+        //Selecionando por ID: getElementById()
+
+        var a = document.getElementById('msg')
+        a.style.background = "green"
+        a.innerText = "Mudado por innerText"
+
+        //outras formas de seletor
+
+        document.getElementsByName('msg')  //name
+        document.getElementsByClassName('msg')  //classe
+
+        // querySelector
+
+        document.querySelector('div#msg') //tag+id
+        document.querySelector('div.msg') //tag+class
+        
+
     </script>
 </body>
 </html>

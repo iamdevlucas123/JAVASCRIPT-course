@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condição de velocidade</title>
+</head>
+<body>
+    <section class="radar">
+        <h1>PARE!</h1>
+        <p>Digite sua velocidade AQUI-></p>
+        <input type="number" name="txtvel" id="txtvel" placeholder="km/h">
+        <input type="submit" value="Enviar" onclick='velocidade()'>
+        <div id="carta">--CARTA DE MULTA--</div>
+    </section>
+
+    <script>
+        function velocidade () {
+            var vel = Number(document.getElementById('txtvel').value)
+            var carta = document.getElementById('carta')
+
+            if (vel > 80) {
+                carta.innerText = `Multado!! Sua velocidade atual é de ${vel} km/h`;
+            }else {
+                carta.innerText = `Sua velocidade atual é de ${vel} km/h`;
+            }
+
+        }
+    </script>
+</body>
+</html>

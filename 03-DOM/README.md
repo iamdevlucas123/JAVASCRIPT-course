@@ -6,7 +6,7 @@
     - ID
     - Nome
     - Classe
-    - Seletor (CSS)
+    - Seletor (querySelector)
 - document.getElementByTagName(p) [0]  : Ou seja, vai pegar somente o primeiro elemento paragrafo
 - innerText : O texto que esta dentro do elemento.
 

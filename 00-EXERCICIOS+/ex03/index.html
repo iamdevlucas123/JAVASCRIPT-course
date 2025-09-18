@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Discovery your age</title>
+</head>
+<body>
+    <h1>VERIFICAR IDADE</h1>
+    <main>
+        <div class="year_input">
+            <label for="yearx">Ano do Nascimento: </label>
+            <input type="number" name="year" id="yearx" maxlength="4"> <br><br>
+            Gênero: 
+            <label for="generom">Masculino: </label>
+            <input type="radio" name="sexo" id="generom" value="Masculino">
+            <label for="generof">Feminino: </label>
+            <input type="radio" name="sexo" id="generof" value="Feminino" checked> <br> 
+
+            <input type="button" value="Verificar" id="button" onclick="verificar()"> 
+            <div id="resultado">Aqui vai ficar o resultado....</div>
+            <div id="imagem"></div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos</title>
+    <style>
+        #container {
+            background-color: aqua;
+            color: black;
+            padding: 50px;
+            width: 150px;
+            border-radius: 10px;
+            margin: 20px;
+        }
+
+        #container1 {
+            background-color: aqua;
+            color: black;
+            padding: 50px;
+            width: 150px;
+            border-radius: 10px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!--onclick é um elemento que sera executado quando o usuario clicar nesta div ira executar a função-->
+    <div id="container" onclick="clicar()" onmouseenter="inside()" onmouseout="getout()">
+        <h1>Interact!</h1>
+    </div>
+
+    <div id="container1">
+        <h1>with Listener!</h1>
+    </div>
+
+    <script>
+        //Eventos: Cada vez que o usuário faz uma ação aciona uma ocorrência como: click, keydown
+        //Pesquisar mais em (https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Events)
+
+        //Quando for clicado a função vai ser executada
+        //variaveis definidas dentro de funções não conseguem ser referenciadas fora
+
+        var a = document.getElementById('container')
+
+        function clicar() {
+            a.innerHTML = "Clicou!!"
+            a.style.background = "red"
+        }
+
+        function inside() {
+            a.innerHTML = "Entrou!!"
+        }
+
+        function getout() {
+            a.innerHTML = "Saiu!!"
+        }
+
+        //Eu também posso usar o Listener, que dispensa o uso de elementos JS no HTML
+
+        var b = document.getElementById('container1')
+
+        b.addEventListener('click', clicar1)
+        b.addEventListener('mouseenter', inside1)
+        b.addEventListener('mouseout', getout1)
+        
+        function clicar1() {
+            b.innerHTML = "Clicou!!"
+            b.style.background = "red"
+        }
+
+        function inside1() {
+            b.innerHTML = "Entrou!!"
+        }
+
+        function getout1() {
+            b.innerHTML = "Saiu!!"
+        }
+    </script>
+</body>
+</html>

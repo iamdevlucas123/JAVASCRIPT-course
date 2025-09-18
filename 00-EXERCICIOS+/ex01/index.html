@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>soma de valores</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: linear-gradient(to bottom, blueviolet, rgba(0, 0, 255, 0.436));
+            background-repeat: no-repeat;
+        }
+
+        .calc {
+            background-color: rgba(77, 181, 184, 0.474);
+            text-align: center;
+            font-size: 0.8em;
+            width: 500px;
+            height: 200px;
+        }
+
+        #valor1, #valor2 {
+            border: solid 1px black;
+            border-radius: 10px;
+        }
+
+        #resposta {
+            margin-top: 20px;
+            font-weight: bolder;
+            font-size: 1.5em;
+        }
+
+    </style>
+</head>
+<body>
+    <section class="calc">
+        <h1>Insira dois valores e clique em somar</h1>
+        <input type="number" name="valor1" id="valor1"> +
+        <input type="number" name="valor2" id="valor2">
+        <input type="submit" value="SOMAR" onclick="soma()">
+        <p id="resposta">RESPOSTA AQUI -></p>
+    </section>
+
+    <script>
+
+        function soma() {
+            var numero1 = Number(document.getElementById('valor1').value)
+            var numero2 = Number( document.getElementById('valor2').value)
+            var s = numero1 + numero2
+            var res = document.getElementById('resposta')
+            res.innerHTML = `A soma entre ${numero1} + ${numero2} é igual a <strong>${s}</strong>`
+        }
+    </script>
+</body>
+</html>
