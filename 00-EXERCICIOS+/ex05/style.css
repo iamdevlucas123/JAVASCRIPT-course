@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+body{
+    display: flex;
+    flex-flow: column nowrap;
+    background-image: linear-gradient(to bottom, rgba(4, 4, 58, 0.595), rgba(4, 4, 47, 0.255));
+    background-repeat: no-repeat;
+    justify-content: center;
+    height: 100vh;
+}
+
+body > h1 {
+    margin: auto;
+}
+
+.container {
+    background-color: white;
+    width: 400px;
+    height: 500px;
+    margin: auto;
+    padding: 50px;
+    border-radius: 20px;
+}
+
+#select {
+    width: 160px;
+    height: 150px;
+    margin-bottom: 20px;
+}
+
