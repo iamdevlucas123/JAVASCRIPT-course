@@ -12,12 +12,12 @@ class pessoa {
         this.idade = idade;
     }
 
-    apresentar(){
+    apresentar(){ //método
         console.log(`olá, meu nome é ${this.nome} e tenho ${this.idade} anos`)
     }
 }
 
-const usuario = new pessoa("Ana", 28)
+const usuario = new pessoa("Ana", 28) //Instância
 usuario.apresentar()
 
 /*
@@ -54,6 +54,34 @@ class conta {
     }
 
     verSaldo(){
-        console.log(`Saldo de ${} ${this.}`)
+        console.log(`Saldo de ${this.titular} é: ${this.saldo}`)
     }
 }
+
+
+//Criando um objeto com new
+//Para usar uma classe, sempre criamos um objeto (intância) usando new
+
+class Animal {
+    constructor (nome){
+        this.nome = nome;
+    }
+}
+
+const cachorro = new Animal("Rex");
+console.log(cachorro) // Animal {nome: 'Rex'}
+
+
+
+//Métodos Static
+//Pertencem à classe, não ao objeto criado.
+//Úteis para funções utilitárias que não dependem de uma instância.
+
+class Matematica {
+  static somar(a, b) {
+    return a + b;
+  }
+}
+
+console.log(Matematica.somar(5, 3)); // 8
+//Não podemos chamar matematica.somar() em uma instância, apenas Matematica.somar() diretamente na classe.
