@@ -18,3 +18,15 @@ body {
     padding: 8px;
     border-radius: 10px;
 }
+
+#senha, #usuario {
+    margin-bottom: 18px;
+}
+
+#senha {
+    margin-left: 55px;
+}
+
+.container > h1{
+    margin-left: 40px;
+}
