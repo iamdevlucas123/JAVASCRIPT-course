@@ -3,8 +3,6 @@
 Objetivo = Praticar criação de classe, atributos e métodos.
 
 Exercício:
-    - Criar conta para acessar
-    - Captar nome do cliente e seu código bancário
     - Criação de uma classe simples
     - Mostrar saldo na tela
     - verSaldo() Esconder ou mostrar saldo
