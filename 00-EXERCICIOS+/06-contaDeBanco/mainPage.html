@@ -10,18 +10,18 @@
 <body>
     <section class="container_main">
         <div class="child_nome">
-            <h1 id="welcome">Seja bem vindo, Lucas</h1>
+            <h1 id="welcome">Seja bem vindo, </h1>
             <p>conta corrente</p>
         </div>
 
         <div class="child_saldo">
-            <p >Saldo: R$ </p>
-            <button class="material-icons" id="visibility">visibility</button>
+            <p>Saldo: R$ <span id="saldo">0.00</span></p>
+            <button class="material-icons" id="visibility" onclick="visibility()">visibility</button>
         </div>
             
         <div class="deposito_saque">
             <label>
-                <input type="number" name="depositar" id="depositar">
+                <input type="number" name="depositar" id="depositar" onclick="depositar()">
                 <input type="submit" value="depositar">
             </label>
             <label>
