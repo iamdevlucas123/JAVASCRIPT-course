@@ -4,13 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <section>
-        <h1>Seja bem vindo...</h1>
-        <p>conta corrente</p>
-        <p>Saldo: </p>
-        <button></button>
+<body onload="start()">
+    <section class="container_main">
+        <div class="child_nome">
+            <h1 id="welcome">Seja bem vindo, </h1>
+            <p>conta corrente</p>
+        </div>
+
+        <div class="child_saldo">
+            <p>Saldo: R$ ****</p>
+            <button class="material-icons" id="visibility">visibility</button>
+        </div>
+            
+        <div class="deposito_saque">
+            <label>
+                <input type="number" name="depositar" id="depositar">
+                <input type="submit" value="depositar">
+            </label>
+            <label>
+                <input type="number" name="sacar" id="sacar">
+                <input type="submit" value="Sacar">
+            </label>
+        </div>
+
+        <div class="historico">
+            <select name="historico" id="historico" size="12"></select>
+        </div>
+
+        <script src="script.js"></script>
     </section>
 </body>
 </html>

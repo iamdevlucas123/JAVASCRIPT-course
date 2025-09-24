@@ -9,6 +9,7 @@ Exercício:
     - Mostrar saldo na tela
     - verSaldo() Esconder ou mostrar saldo
     - deposditar(), sacar()
+    - Após depositar ou sacar, ele fica no histórico
 
 -- EXERCICIO 2 --
 Objetivo = Treinar encapsulamento para proteger dados internos da classe.
