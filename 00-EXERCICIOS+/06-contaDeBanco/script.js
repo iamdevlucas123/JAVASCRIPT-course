@@ -1,3 +1,4 @@
+
 let saldo = 0;
 let saldoVisivel = false;
 
@@ -13,6 +14,7 @@ const valueDeposit = document.getElementById('depositar');
 const btnDeposit = document.getElementById('btnDeposit');
 const valueWithdraw = document.getElementById('sacar');
 const btnWithdraw = document.getElementById('btnWithdraw');
+const historic = document.getElementById('historico')
 
 console.log({
     saldoElement,
@@ -42,12 +44,56 @@ function toggleSaldo() {
 
 //deposit function
 
+function deposit(){
+    const value = parseFloat(valueDeposit.value)
 
+    if (isNaN(value) || value < 0){
+        alert('Please type a valid value.');
+        return;
+    }
+
+    saldo += value;
+    valueDeposit.value = ""  //Após isso preciso zerar a variavel
+    atualizarSaldo()
+    alert(`Deposito de  ${value.toFixed(2)} feito com sucesso`)
+
+    //Add to historic
+    let item = document.createElement('option');
+    item.text = `add R$ ${value.toFixed(2)}`;
+    historic.appendChild(item);
+}
+
+// withdraw function
+
+function withdraw(){
+    const sacar = parseFloat(valueWithdraw.value);
+
+    if (sacar > saldoElement){
+        alert('Your card was declined!');
+        return;
+    }
+
+    if (isNaN (sacar) || sacar <= 0){
+        alert('Please type a valid number');
+        return;
+    }
+
+    saldo -= sacar;
+    valueWithdraw.value = "";
+    atualizarSaldo();
+    alert(`Saque no valor de ${sacar.toFixed(2)} realizado`);
+
+    //Add historic
+    let item = document.createElement('option');
+    item.text = `Withdraw R$ ${sacar.toFixed(2)}`;
+    historic.appendChild(item);
+}
 
 //Events
 
 toggleButton.addEventListener('click', toggleSaldo)
-
+btnDeposit.addEventListener('click', deposit)
+btnWithdraw.addEventListener('click', withdraw)
 
 
 
