@@ -1,99 +1,78 @@
 
+//Welcome name
+const welcome = document.getElementById('welcome')
+const nome = prompt('Type your name: ')
+welcome.append(nome)
+
+//iniciating the atributes
+
 let saldo = 0;
-let saldoVisivel = false;
+let toggleView = false;
 
-// welcome prompt
-const nome = prompt("Digite seu nome: ");
-const welcome = document.getElementById('welcome');
-welcome.append(nome);
+//elements references
 
-// Elements references
-const saldoElement = document.getElementById('saldo');
-const toggleButton = document.getElementById('visibility');
-const valueDeposit = document.getElementById('depositar');
-const btnDeposit = document.getElementById('btnDeposit');
-const valueWithdraw = document.getElementById('sacar');
-const btnWithdraw = document.getElementById('btnWithdraw');
+const balance = document.getElementById('saldo')
+const view = document.getElementById('visibility')
+const deposit = document.getElementById('depositar')
+const btn_deposit = document.getElementById('btnDeposit')
+const withdraw = document.getElementById('withdraw')
+const btn_withdraw = document.getElementById('btnWithdraw')
 const historic = document.getElementById('historico')
 
-console.log({
-    saldoElement,
-    toggleButton,
-    valueDeposit,
-    btnDeposit,
-    btnDeposit,
-    valueWithdraw,
-    btnWithdraw
-})
+// Visualization function
 
-// function to update the balance
-//Usando operador ternário, uma forma curta de escrever if/else
-// condiçao (booleano) ? valorSeVerdadeiro : valorSefalso
-
-function atualizarSaldo() {
-    saldoElement.innerHTML = saldoVisivel ? ` ${saldo.toFixed(2)}` : "****"
+function viewBalance(){
+    toggleView = !toggleView;
+    balance.innerHTML = toggleView ? `${saldo.toFixed(2)}` : "****";
 }
 
-// ! a exclamação inverte é um operador de negação lógica
-// ele inverte o valor booleano !true -> false
+function depositing(){
 
-function toggleSaldo() {
-    saldoVisivel = !saldoVisivel;
-    atualizarSaldo();
-}
+    const value = parseFloat(deposit.value)
 
-//deposit function
-
-function deposit(){
-    const value = parseFloat(valueDeposit.value)
-
-    if (isNaN(value) || value < 0){
-        alert('Please type a valid value.');
+    if (isNaN(value) || value < 0) {
+        alert('Please type a valid number!')
         return;
     }
 
-    saldo += value;
-    valueDeposit.value = ""  //Após isso preciso zerar a variavel
-    atualizarSaldo()
-    alert(`Deposito de  ${value.toFixed(2)} feito com sucesso`)
+    saldo += value
+    balance.innerHTML = saldo.toFixed(2)
+    alert(`congratulation you increase R$ ${value}.`)
 
-    //Add to historic
-    let item = document.createElement('option');
-    item.text = `add R$ ${value.toFixed(2)}`;
+    const item = document.createElement('option');
+    item.text = `deposit ${value}`;
+    item.style.color = 'green';
+    item.style.fontSize = '1em'
     historic.appendChild(item);
 }
 
-// withdraw function
+function withdrawing () {
 
-function withdraw(){
-    const sacar = parseFloat(valueWithdraw.value);
+    const value = parseFloat(withdraw.value);
 
-    if (sacar > saldoElement){
-        alert('Your card was declined!');
+    if (isNaN(value) || value <= 0){
+        alert('Please type a valid number. ')
         return;
     }
 
-    if (isNaN (sacar) || sacar <= 0){
-        alert('Please type a valid number');
+    if (value > saldo){
+        alert('your card was declined')
         return;
     }
 
-    saldo -= sacar;
-    valueWithdraw.value = "";
-    atualizarSaldo();
-    alert(`Saque no valor de ${sacar.toFixed(2)} realizado`);
+    saldo -= value
+    balance.innerHTML = saldo.toFixed(2)
+    alert(`withdraw R$ ${value}.`)
 
-    //Add historic
-    let item = document.createElement('option');
-    item.text = `Withdraw R$ ${sacar.toFixed(2)}`;
+    const item = document.createElement('option');
+    item.text = `withdraw ${value}`;
+    item.style.color = 'red';
+    item.style.fontSize = '1em'
     historic.appendChild(item);
 }
 
-//Events
 
-toggleButton.addEventListener('click', toggleSaldo)
-btnDeposit.addEventListener('click', deposit)
-btnWithdraw.addEventListener('click', withdraw)
-
-
-
+//listener
+view.addEventListener('click', viewBalance)
+btn_deposit.addEventListener('click', depositing)
+btn_withdraw.addEventListener('click', withdrawing)
