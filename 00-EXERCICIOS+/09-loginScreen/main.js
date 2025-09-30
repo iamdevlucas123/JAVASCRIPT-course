@@ -36,4 +36,21 @@ function mergeConfig(cfg) {
     currentConfig = {...currentConfig, ...(cfg || {})}
 }
 
-//
+//Chama função de UI (??????)
+
+function renderLogged(user) {
+UI.showUserPanel(currentConfig.userPanelId, user);
+}
+
+//Optional Chaining (?)
+//Evita erros se o objeto for null ou undefined
+//Sem o ?., se getElementById não encontrar o elemento, fazer .value causaria um erro: "Cannot read property 'value' of null".
+
+function attachHandlers(){
+    const loginForm = document.getElementById(currentConfig.loginEmailId)
+    const regForm = document.getElementById(currentConfig.registerFormId)
+
+    if (loginForm) {}
+        
+
+}
