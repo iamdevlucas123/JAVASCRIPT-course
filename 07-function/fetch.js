@@ -4,6 +4,9 @@
 - Permite fazer requisições HTTP (GET, POST, PUT, DELETE. etc)
 - Retorna uma promise -> ou sejá é assincrono
 - Usado para consumir API/servidor
+
+FETCH() -> PROMISE -> SERVER -> JSON
+
 */
 
 fetch(url, opções);
